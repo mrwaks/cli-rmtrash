@@ -48,7 +48,7 @@ elif [ "$1" = "-y" ]
 then
     checkOS &&
     checkContentTrash ||
-    emptyTrash
+    emptyTrash && echo "rmtrash successfully emptied"
 elif [ $# -eq 0 ]
 then
     checkOS &&
