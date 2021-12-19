@@ -4,3 +4,7 @@ cli-rmtrash V1.0.0:
 
     1. Adding cli rmtrash: v_macos && v_linux.
     2. Adding cli emptyrmtrash: v_macos && v_linux.
+
+cli-rmtrash V1.0.1:
+
+    1. System Operator Verification Patch.

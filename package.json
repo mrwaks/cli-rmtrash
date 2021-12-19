@@ -1,7 +1,11 @@
 {
   "name": "rmtrash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
+    "install_macos": "./build/installation/macos/install_macos.sh",
+    "install_linux": "./build/installation/linux/install_linux.sh",
+    "uninstall_macos": "./build/uninstallation/macos/uninstall_macos.sh",
+    "uninstall_linux": "./build/uninstallation/linux/uninstall_linux.sh"
   },
   "author": "mrwaks",
   "license": "MIT"

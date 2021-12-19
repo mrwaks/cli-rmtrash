@@ -9,7 +9,7 @@ shopt -s nocasematch;
 # HELPER:
 
 helper() {
-    echo -e "Help:\n\nCommands:\n\n  emtrash        To empty the rmtrash with confirmation\n\n  emtrash -y     To empty the rmtrash trash without confirmation"
+    echo -e "\x1b[4mHelp:\x1b[0m\n\nCommands:\n\n  emtrash        To empty the rmtrash with confirmation\n\n  emtrash -y     To empty the rmtrash trash without confirmation"
 }
 
 # VERSION:
@@ -21,7 +21,7 @@ version() {
 # PROGRAMS STEPS:
 
 checkOS() {
-    [ $OS = "Darwin" ] && return 0 || echo "Os not compatible" && return 1
+    [ $OS = "Darwin" ] && return 0 || echo "Os not compatible" && exit 1
 }
 
 checkContentTrash() {
@@ -38,12 +38,16 @@ emptyTrash() {
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]
 then
+    checkOS &&
     helper
 elif [ "$1" = "-v" ] || [ "$1" = "--version" ]
 then
+    checkOS &&
     version
 elif [ "$1" = "-y" ]
 then
+    checkOS &&
+    checkContentTrash ||
     emptyTrash
 elif [ $# -eq 0 ]
 then

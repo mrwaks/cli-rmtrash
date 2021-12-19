@@ -21,7 +21,7 @@ BIS="$DATE-$TIME-id$RANDOM"
 # HELPER:
 
 helper() {
-    echo -e "Help:\n\nCommands:\n\n  rmtrash [...files/directory]    To place one or more items in the rmtrash bin\n\n  rmtrash ls                      To view the contents in the rmtrash bin"
+    echo -e "\x1b[4mHelp:\x1b[0m\n\nCommands:\n\n  rmtrash [...files/directory]    To place one or more items in the rmtrash bin\n\n  rmtrash ls                      To view the contents in the rmtrash bin"
 }
 
 # VERSION:
@@ -33,7 +33,7 @@ version() {
 # PROGRAMS STEPS:
 
 checkOS() {
-    [ $OS = "Linux" ] && return 0 || echo "Os not compatible" && return 1
+    [ $OS = "Linux" ] && return 0 || echo "Os not compatible" && exit 1
 }
 
 checkItemsExists() {
@@ -55,15 +55,19 @@ rmTrashList() {
 
 if [ $# -eq 0 ]
 then
+    checkOS &&
     helper
 elif [ "$1" = "ls" ]
 then
+    checkOS &&
     rmTrashList
 elif [ "$1" = "--help" ] || [ "$1" = "-h" ]
 then
+    checkOS &&
     helper
 elif [ "$1" = "--version" ] || [ "$1" = "-v" ]
 then
+    checkOS &&
     version
 else
     checkOS &&
