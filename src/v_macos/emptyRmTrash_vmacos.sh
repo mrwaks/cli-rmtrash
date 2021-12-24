@@ -36,6 +36,10 @@ emptyTrash() {
     for ITEM in $TRASH_CONTENT; do cd ~/.RMTRASH && rm -r "$ITEM"; done
 }
 
+shredIt() {
+    find ~/.RMTRASH -type f -exec shred -n 12 -z -u {} +;
+}
+
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]
 then
     checkOS &&
@@ -49,6 +53,12 @@ then
     checkOS &&
     checkContentTrash ||
     emptyTrash && echo "rmtrash successfully emptied"
+elif [ "$1" = "--shred" ] || [ "$1" = "-shred" ] || [ "$1" = "shred" ]
+then
+    read -p "Are you sure you shred the trash ? " ANSWER
+    [[ "Y" =~ $ANSWER ]] && shredIt && echo "rmtrash successfully shreded " && exit 0 ||
+    [[ "n" =~ $ANSWER ]] && echo "Cancelation" ||
+    echo "Invalid answer"
 elif [ $# -eq 0 ]
 then
     checkOS &&
