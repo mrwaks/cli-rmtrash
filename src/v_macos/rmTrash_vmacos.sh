@@ -21,7 +21,7 @@ BIS="$DATE-$TIME-id$RANDOM"
 # HELPER:
 
 helper() {
-    echo -e "\x1b[4mHelp:\x1b[0m\n\nCommands:\n\n  rmtrash [...files/directory]    To place one or more items in the rmtrash bin\n\n  rmtrash ls                      To view the contents in the rmtrash bin"
+    echo -e "\x1b[4mHelp:\x1b[0m\n\nCommands:\n\nrmtrash [...files/directory] - To place one or more items in the rmtrash bin\n\nrmtrash ls - To view the contents in the rmtrash bin"
 }
 
 # VERSION:
@@ -52,26 +52,25 @@ rmTrashList() {
     if [ ${#TRASH_CONTENT} -eq 0 ]; then echo "rmtrash empty"; else echo -e "\x1b[4mrmtrash content:\x1b[0m\n$TRASH_CONTENT"; fi
 }
 
+checkOS
 
-if [ $# -eq 0 ]
+if [ $? -eq 0 ]
 then
-    checkOS &&
-    helper
-elif [ "$1" = "ls" ]
-then
-    checkOS &&
-    rmTrashList
-elif [ "$1" = "--help" ] || [ "$1" = "-h" ]
-then
-    checkOS &&
-    helper
-elif [ "$1" = "--version" ] || [ "$1" = "-v" ]
-then
-    checkOS &&
-    version
-else
-    checkOS &&
-    checkItemsExists
-    checkItemsExistInTrash
-    rmTrash
+    if [ $# -eq 0 ]
+    then
+        echo -e "rmtrash: missing operand\nTry 'rmtrash --help' for more information."
+    elif [ "$1" = "ls" ]
+    then
+        rmTrashList
+    elif [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "-help" ]
+    then
+        helper
+    elif [ "$1" = "--version" ] || [ "$1" = "-v" ]
+    then
+        version
+    else
+        checkItemsExists
+        checkItemsExistInTrash
+        rmTrash
+    fi
 fi

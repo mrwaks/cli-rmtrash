@@ -136,11 +136,11 @@ The deleted item(s) will be placed in your .RMTRASH located in the "~" directory
 
 ### **Run this command line to see the version of rmtrash**:
 
-    rmtrash [-v] [--version]
+    rmtrash [-v] | [--version]
 
 ### **Run this command line to open the helper:**
 
-    rmtrash [-h] [--help]
+    rmtrash [-h] | [-help] | [--help]
 
 <a href="#summary" style="font-size:15px">Go back to summary ⬆️</a>
 
@@ -152,25 +152,25 @@ The deleted item(s) will be placed in your .RMTRASH located in the "~" directory
 
     emptyrmtrash
 
-### **Following this command, you will be asked the following question**:
-
-    Are you sure to empty the rmtrash ? (Y/n)
-
-Answer Y/y, and it will delete all items in rmtrash.
-
-Answer N/n, and that will cancel the delete items request in rmtrash.
-
 ### **Run this command line to empty the rmtrash bin without confirmation:**
 
     emptyrmtrash -y
 
+### **Run this command line to shred all files in the rmtrash and empty all files in it with confirmation:**
+
+    emptyrmtrash [shred] | [-shred] | [--shred]
+
+### **Run this command line to shred all files in the rmtrash and empty all files in it without confirmation:**
+
+    emptyrmtrash [shred -y] | [-shred -y] | [--shred -y]
+
 ### **Run this command line to see the version of rmtrash**:
 
-    emptyrmtrash [-v] [--version]
+    emptyrmtrash [-v] | [--version]
 
 ### **Run this command line to open the helper:**
 
-    emptyrmtrash [-h] [--help]
+    emptyrmtrash [-h] | [-help] | [--help]
 
 <a href="#summary" style="font-size:15px">Go back to summary ⬆️</a>
 

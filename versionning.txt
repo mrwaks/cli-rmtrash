@@ -8,3 +8,18 @@ cli-rmtrash V1.0.0:
 cli-rmtrash V1.0.1:
 
     1. System Operator Verification Patch.
+
+cli-rmtrash V1.1.1:
+
+    1. Adding new feature:
+
+        - emptyrmtrash shred command: to shred all items in rmtrash with confirmation.
+
+    2. Optimization:
+
+        - removing repetition of checkOS function.
+        - modification of emptyrmtrash and rmtrash helper.
+        - adding message information if there is not operand with rmtrash command.
+        - adding message information if there is bad operand with emptyrmtrash.
+
+    3. Updating the README.
