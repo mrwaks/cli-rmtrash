@@ -156,11 +156,11 @@ The deleted item(s) will be placed in your .RMTRASH located in the "~" directory
 
     emptyrmtrash -y
 
-### **Run this command line to shred all files in the rmtrash and empty all files in it with confirmation:**
+### **Run this command line to shred all files in the rmtrash and empty all items in it with confirmation:**
 
     emptyrmtrash [shred] | [-shred] | [--shred]
 
-### **Run this command line to shred all files in the rmtrash and empty all files in it without confirmation:**
+### **Run this command line to shred all files in the rmtrash and empty all items in it without confirmation:**
 
     emptyrmtrash [shred -y] | [-shred -y] | [--shred -y]
 

@@ -27,7 +27,7 @@ helper() {
 # VERSION:
 
 version() {
-    echo "1.0.0"
+    echo "1.1.1"
 }
 
 # PROGRAMS STEPS:
