@@ -32,7 +32,7 @@ symlinkRmTrash() {
     if [ -e "/usr/local/bin" ]
     then
         PWD=`pwd`
-        ln -s "$PWD/src/v_macos/rmTrash_vmacos.sh" "/usr/local/bin/rmtrash"
+        ln -s "$PWD/src/v_linux/rmTrash_vlinux.sh" "/usr/local/bin/rmtrash"
     fi
 }
 
@@ -40,7 +40,7 @@ symlinkEmptyTrash() {
     if [ -e "/usr/local/bin" ]
     then
         PWD=`pwd`
-        ln -s "$PWD/src/v_macos/emptyRmTrash_vmacos.sh" "/usr/local/bin/emptyrmtrash"
+        ln -s "$PWD/src/v_linux/emptyRmTrash_vlinux.sh" "/usr/local/bin/emptyrmtrash"
     fi
 }
 
@@ -52,4 +52,4 @@ builtRmTrash() {
     symlinkRmTrash && symlinkEmptyTrash && createRmTrash
 }
 
-checkOS && debuiltRmTrash && builtRmTrash && echo -e "\x1b[32mRmtrash successfully updated" && exit 0 || echo -e "\x1b[31mRmtrash updating encountered a problem, please try again\x1b[0m" && exit 1
+checkOS && debuiltRmTrash && builtRmTrash && echo -e "\x1b[32mRmtrash successfully updated\x1b[0m" && exit 0 || echo -e "\x1b[31mRmtrash updating encountered a problem, please try again\x1b[0m" && exit 1

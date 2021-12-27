@@ -52,4 +52,4 @@ builtRmTrash() {
     symlinkRmTrash && symlinkEmptyTrash && createRmTrash
 }
 
-checkOS && debuiltRmTrash && builtRmTrash && echo -e "\x1b[32mRmtrash successfully updated" && exit 0 || echo -e "\x1b[31mRmtrash updating encountered a problem, please try again\x1b[0m" && exit 1
+checkOS && debuiltRmTrash && builtRmTrash && echo -e "\x1b[32mRmtrash successfully updated\x1b[0m" && exit 0 || echo -e "\x1b[31mRmtrash updating encountered a problem, please try again\x1b[0m" && exit 1
