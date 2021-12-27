@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# If you have an installation problem, refer to the debuilt_rescue directory
+OS=`uname`
+
+checkOS() {
+    [ $OS = "Darwin" ] && return 0 || echo -e "\1b[31mYou are trying to run a macos version uninstall, please try again with the target version of your system\x1b[0m" && exit 1
+}
 
 removeRmTrash() {
     `cd && rm -rf .RMTRASH`
@@ -21,7 +25,7 @@ unsymlinkEmptyRmTrash() {
 }
 
 debuiltRmTrash() {
-    removeRmTrash && unsymlinkRmTrash && unsymlinkEmptyRmTrash && echo -e "\033[32mRmtrash successfully uninstalled\033[0m"
+    removeRmTrash && unsymlinkRmTrash && unsymlinkEmptyRmTrash
 }
 
-debuiltRmTrash
+checkOS && debuiltRmTrash && echo -e "\x1b[32mRmtrash successfully uninstalled\x1b[0m" && exit 0 || echo -e "\x1b[31mRmtrash uninstallation encountered a problem, please try again\x1b[0m" && exit 1

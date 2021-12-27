@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# If you have an installation problem, refer to the built_rescue directory
+OS=`uname`
+
+checkOS() {
+    [ $OS = "Linux" ] && return 0 || echo -e "\1b[31mYou are trying to run a macos version install, please try again with the target version of your system\x1b[0m" && exit 1
+}
 
 createRmTrash() {
     `cd && mkdir .RMTRASH`
@@ -23,7 +27,7 @@ symlinkEmptyTrash() {
 }
 
 builtRmTrash() {
-    symlinkRmTrash && symlinkEmptyTrash && createRmTrash && echo -e "\033[32mRmtrash successfully installed\033[0m"
+    symlinkRmTrash && symlinkEmptyTrash && createRmTrash
 }
 
-builtRmTrash
+checkOS && builtRmTrash && echo -e "\x1b[32mRmtrash successfully installed\x1b[0m" && exit 0 || echo -e "\x1b[31mRmtrash installation encountered a problem, please try again\x1b[0m" && exit 1

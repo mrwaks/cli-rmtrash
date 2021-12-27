@@ -5,7 +5,9 @@
     "install_macos": "./build/installation/macos/install_macos.sh",
     "install_linux": "./build/installation/linux/install_linux.sh",
     "uninstall_macos": "./build/uninstallation/macos/uninstall_macos.sh",
-    "uninstall_linux": "./build/uninstallation/linux/uninstall_linux.sh"
+    "uninstall_linux": "./build/uninstallation/linux/uninstall_linux.sh",
+    "update_macos": "git pull; ./build/updating/macos/update_macos.sh",
+    "update_linux": "git pull; ./build/updating/linux/update_linux.sh"
   },
   "author": "mrwaks",
   "license": "MIT"

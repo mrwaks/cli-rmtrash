@@ -104,19 +104,19 @@ Finally, this will delete the commands in the /usr/local/bin directory.
 
 ### With Macos:
 
-    git pull && ./build/uninstallation/macos/uninstall_macos.sh && ./build/installation/macos/install_macos.sh
+    git pull; ./build/updating/macos/update_macos.sh
 
 ### or with npm:
 
-    git pull && npm run uninstall_macos && npm run install_macos
+    npm run update_macos
 
 ### With Linux:
 
-    git pull && ./build/uninstallation/linux/uninstall_linux.sh && ./build/installation/linux/install_linux.sh
+    git pull; ./build/updating/linux/update_linux.sh
 
 ### or with npm:
 
-    git pull && npm run uninstall_linux && npm run install_linux
+    npm run update_linux
 
 <a href="#summary" style="font-size:15px">Go back to summary ⬆️</a>
 
