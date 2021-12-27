@@ -15,7 +15,7 @@ helper() {
 # VERSION:
 
 version() {
-    echo "1.1.1"
+    echo "v1.1.1"
 }
 
 # QUESTIONS:
