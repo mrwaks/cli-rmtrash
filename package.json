@@ -1,6 +1,6 @@
 {
-  "name": "rmtrash",
-  "version": "1.1.1",
+  "name": "cli-rmtrash",
+  "version": "1.1.2",
   "scripts": {
     "install_macos": "./build/installation/macos/install_macos.sh",
     "install_linux": "./build/installation/linux/install_linux.sh",

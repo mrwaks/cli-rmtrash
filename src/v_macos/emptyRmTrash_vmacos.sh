@@ -15,7 +15,7 @@ helper() {
 # VERSION:
 
 version() {
-    echo "v1.1.1"
+    echo "v1.1.2"
 }
 
 # QUESTIONS:
@@ -63,7 +63,7 @@ then
     elif [ "$1" = "--shred" ] && [ "$2" = "-y" ] || [ "$1" = "-shred" ] && [ "$2" = "-y" ] || [ "$1" = "shred" ] && [ "$2" = "-y" ]
     then
         checkContentTrash ||
-        shredIt && echo "rmtrash successfully shreded" && exit 0
+        shredIt && emptyTrash && echo "rmtrash successfully shreded" && exit 0
     elif [ "$1" = "--shred" ] || [ "$1" = "-shred" ] || [ "$1" = "shred" ]
     then
         checkContentTrash ||

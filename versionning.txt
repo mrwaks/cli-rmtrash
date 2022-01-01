@@ -23,3 +23,9 @@ cli-rmtrash V1.1.1:
         - adding message information if there is bad operand with emptyrmtrash.
 
     3. Updating the README.
+
+cli-rmtrash V1.1.2:
+
+    1. Bug fixed:
+
+        - Emptying the trash completely with the emptyrmtrash shred -y command.
